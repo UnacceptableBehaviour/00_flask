@@ -63,10 +63,18 @@ http://127.0.0.1:5000/20190101_171835_venison_wellington_turkey_croquette.jpg
 Need to create a folder static which is where it finds these files, and the .css file
 
 
-#REFERENCES
+# REFERENCES
 Installing Flask
+http://flask.pocoo.org/docs/1.0/installation/
+
 Quick start guide
+http://flask.pocoo.org/docs/1.0/quickstart/
+
 Towards Data Science Flask on rPi
+https://projects.raspberrypi.org/en/projects/python-web-server-with-flask/2
+
 Flask on rPi
-Python Comments
+http://mattrichardson.com/Raspberry-Pi-Flask/
+
 Static Files Directory
+https://stackoverflow.com/questions/28207761/where-does-flask-look-for-image-files
