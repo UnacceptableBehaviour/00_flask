@@ -3,7 +3,7 @@ Flask tutorial - newbie level
 
 
 **Setting up and running Flask - Hello world**
-
+```
 $ cd /Users/simon/a_syllabus/lang/python/00_flask 	# create project directory
 $ python3 -m venv venv								# create virtual envirmonment - assuming like rvm
 $ ls
@@ -24,8 +24,8 @@ $ flask run
  * Debug mode: off
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 
-										# ADDED to ~/.bash_profile
-$ export FLASK_ENV=development							# TURN ON DEBUG MODE - Auto reload on code changes	
+													# ADDED to ~/.bash_profile
+$ export FLASK_ENV=development						# TURN ON DEBUG MODE - Auto reload on code changes	
 $ flask run
  * Serving Flask app "hello.py" (lazy loading)
  * Environment: development
@@ -34,7 +34,7 @@ $ flask run
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 102-487-015
-
+```
 
 ```html
 Trying to serve image from directory
