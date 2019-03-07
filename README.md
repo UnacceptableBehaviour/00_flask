@@ -14,7 +14,7 @@ $ . venv/bin/activate                               # activate environment
 (venv) $ pip install Flask
 Successfully installed Flask-1.0.2 Jinja2-2.10 MarkupSafe-1.1.1 Werkzeug-0.14.1 click-7.0 itsdangerous-1.1.0
 
-													# create hello.py file 
+# create hello.py file 
 (venv) $ ls
 hello.py  venv
 
