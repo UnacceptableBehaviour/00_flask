@@ -4,28 +4,34 @@ Flask tutorial - newbie level
 
 **Setting up and running Flask - Hello world**
 ```
-$ cd /Users/simon/a_syllabus/lang/python/00_flask 	# create project directory
-$ python3 -m venv venv								# create virtual envirmonment - assuming like rvm
+$ cd /Users/simon/a_syllabus/lang/python/00_flask   # create project directory
+$ python3 -m venv venv                              # create virtual envirmonment - assuming like rvm
 $ ls
 venv
-$ . venv/bin/activate								# activate environment
+
+$ . venv/bin/activate                               # activate environment
+
 (venv) $ pip install Flask
 Successfully installed Flask-1.0.2 Jinja2-2.10 MarkupSafe-1.1.1 Werkzeug-0.14.1 click-7.0 itsdangerous-1.1.0
-(venv) $ ls
-hello.py	venv
 
-$ export FLASK_APP=hello.py							# ADDED to ~/.bash_profile
-$ flask run
+													# create hello.py file 
+(venv) $ ls
+hello.py  venv
+
+$ export FLASK_APP=hello.py                         # ADDED to ~/.bash_profile
+
+$ flask run											
 (venv) $ flask run
  * Serving Flask app "hello.py"
  * Environment: production
    WARNING: Do not use the development server in a production environment.
    Use a production WSGI server instead.
- * Debug mode: off
+ * Debug mode: off                                  # NEED DEBUG MOADE ON FOR AUTO RE-LOAD
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 
-													# ADDED to ~/.bash_profile
-$ export FLASK_ENV=development						# TURN ON DEBUG MODE - Auto reload on code changes	
+                                                    # ADDED to ~/.bash_profile
+$ export FLASK_ENV=development                      # TURN ON DEBUG MODE - Auto reload on code changes  
+
 $ flask run
  * Serving Flask app "hello.py" (lazy loading)
  * Environment: development
