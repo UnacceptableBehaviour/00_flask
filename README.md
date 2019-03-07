@@ -2,7 +2,8 @@
 Flask tutorial - newbie level
 
 
-Setting up and running Flask - Hello world
+** Setting up and running Flask - Hello world **
+
 $ cd /Users/simon/a_syllabus/lang/python/00_flask 	# create project directory
 $ python3 -m venv venv								# create virtual envirmonment - assuming like rvm
 $ ls
