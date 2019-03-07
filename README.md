@@ -61,3 +61,12 @@ The empty place holder has the follow link:
 http://127.0.0.1:5000/20190101_171835_venison_wellington_turkey_croquette.jpg
 
 Need to create a folder static which is where it finds these files, and the .css file
+
+
+#REFERENCES
+Installing Flask
+Quick start guide
+Towards Data Science Flask on rPi
+Flask on rPi
+Python Comments
+Static Files Directory
