@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>nutrient_traffic_light_template</title>
+    <!-- Put .css file it in the static folder! WORKS -->
+    <link rel="stylesheet" href="/static/css_breakout.css">
+</head>
+
+<body>
+
+<h3>
+    Html Version Traffic Lights - HTML5 / CSS 
+</h3>
+
+<table>
+    <tr>
+        <td colspan="5">{{ recipe_name }} - Nutrition per {{ serving_size }} serving</td>
+    </tr>
+    <tr>
+        <td>Energy</td>
+        <td class="traffic_light" id="traffic_fat">Fat</td>
+        <td class="traffic_light" id="traffic_saturates">Saturates</td>
+        <td class="traffic_light" id="traffic_sugars">Sugars</td>
+        <td class="traffic_light" id="traffic_salt">Salt</td>
+    </tr>
+    <tr>
+        <td>1046kJ<br>250kcal</td>
+        <td class="traffic_light" id="traffic_fat">3.0g</td>
+        <td class="traffic_light" id="traffic_saturates">1.3g</td>
+        <td class="traffic_light" id="traffic_sugars">34g</td>
+        <td class="traffic_light" id="traffic_salt">0.9g</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="traffic_light" id="traffic_fat">LOW</td>
+        <td class="traffic_light" id="traffic_saturates">LOW</td>
+        <td class="traffic_light" id="traffic_sugars">HIGH</td>
+        <td class="traffic_light" id="traffic_salt">MEDIUM</td>
+    </tr>
+    <tr>
+        <td>13%</td>
+        <td class="traffic_light" id="traffic_fat">4%</td>
+        <td class="traffic_light" id="traffic_saturates">7%</td>
+        <td class="traffic_light" id="traffic_sugars">38%</td>
+        <td class="traffic_light" id="traffic_salt">15%</td>
+    </tr>
+</table>
+
+</body>
+</html>

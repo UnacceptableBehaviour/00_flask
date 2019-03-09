@@ -35,6 +35,17 @@ def recipe():
     headline = "LOW FAT Crab & Prawn Lunch"
     return render_template("recipe_template.html", recipe_name=headline, recipe_2='Gimme beef')
 
+
+@app.route('/nutri_lights')
+def nutri_lights():
+    headline = "LOW FAT Crab & Prawn Lunch"
+    recipe_name = ''
+    serving_size
+    return render_template("nutrients_traffic_lights.html",
+                           recipe_name=headline,
+                           recipe_2='Gimme beef')
+
+
 # this one passes the last part of the URL as an srgument in the variable var_name
 @app.route('/<path:var_name_path>')
 def get_path(var_name_path):
