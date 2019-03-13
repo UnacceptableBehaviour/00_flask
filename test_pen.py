@@ -6,15 +6,15 @@ from pprint import pprint # giza a look
 
 def get_nutridata():
              #  0          1              2             3             4    5    6    7    8    9
-    header = 'rcp_id,image_filename,recipe_title,txt_ingredient_file,n_En,n_Fa,n_Ca,n_Su,n_Pr,n_Sa'
-    text = '1,20190306_145901_seabass kale and potato dinner.jpg,seabass kale and potato dinner,20190306_145901_seabass kale and potato dinner.txt,55,1.6,2.74,0.32,7.28,0.45'    
+    header = 'rcp_id,image_filename,recipe_title,txt_ingredient_file,n_En,n_Fa,n_Fs,n_Fm,n_Fp,n_Fo3,n_Ca,n_Su,n_Fb,n_St,n_Pr,n_Sa,n_Al,serving_size'
+    text = '1,20190306_145901_seabass kale and potato dinner.jpg,seabass kale and potato dinner,20190306_145901_seabass kale and potato dinner.txt,55,1.6,0.44,0.5,0.43,0.4,2.74,0.32,0.47,0.0,7.28,0.45,0.0,450.0'
     
     header_list = header.split(',') 
     rcp_list = text.split(',')
 
     info = {}
     
-    for i in range(0,10):        
+    for i in range( len(header_list) ):        
         info[ header_list[i] ] = rcp_list[i]
         #print(f"{ header_list[i] } = { info[ header_list[i] ] }")
     
@@ -28,6 +28,13 @@ def main():
  
     for k,v in info.items():        
         print(f"{ k } = { v }")
+        
+    print(f"__name__ is: {__name__}")
+    print(f"__file__ is: {__file__}")
+    print(f"__loader__ is: {__loader__}")
+    print(f"__package__ is: {__package__}")
+    
+    
 
 if __name__ == '__main__':
-    main()
+    main()                      # call main if this is being executed directly 

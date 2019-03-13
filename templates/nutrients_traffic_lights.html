@@ -16,6 +16,7 @@
 <table>
     <tr>
         <td colspan="5">{{ recipe_name }} - Nutrition per {{ serving_size }} serving</td>
+        <!-- Thresholds HERE: https://en.wikipedia.org/wiki/Traffic_light_rating_system -->
     </tr>
     <tr>
         <td>Energy</td>
@@ -25,11 +26,11 @@
         <td class="traffic_light" id="traffic_salt">Salt</td>
     </tr>
     <tr>
-        <td>1046kJ<br>250kcal</td>
-        <td class="traffic_light" id="traffic_fat">3.0g</td>
-        <td class="traffic_light" id="traffic_saturates">1.3g</td>
-        <td class="traffic_light" id="traffic_sugars">34g</td>
-        <td class="traffic_light" id="traffic_salt">0.9g</td>
+        <td>{{ n_EnkJ }}kJ<br>{{ n_Encal }}kcal</td>
+        <td class="traffic_light" id="traffic_fat">{{ n_Fa }}</td>
+        <td class="traffic_light" id="traffic_saturates">{{ n_Fs }}</td>
+        <td class="traffic_light" id="traffic_sugars">{{ n_Su }}</td>
+        <td class="traffic_light" id="traffic_salt">{{ n_Sa }}</td>
     </tr>
     <tr>
         <td></td>

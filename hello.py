@@ -1,8 +1,25 @@
 from flask import Flask, render_template
 app = Flask(__name__)
 
-# each app.route is an endpoint
 
+def get_nutridata():
+             #  0          1              2             3             4    5    6    7    8    9
+    header = 'rcp_id,image_filename,recipe_title,txt_ingredient_file,n_En,n_Fa,n_Fs,n_Fm,n_Fp,n_Fo3,n_Ca,n_Su,n_Fb,n_St,n_Pr,n_Sa,n_Al,serving_size'
+    text = '1,20190306_145901_seabass kale and potato dinner.jpg,seabass kale and potato dinner,20190306_145901_seabass kale and potato dinner.txt,55,1.6,0.44,0.5,0.43,0.4,2.74,0.32,0.47,0.0,7.28,0.45,0.0,450.0'
+    
+    header_list = header.split(',') 
+    rcp_list = text.split(',')
+
+    info = {}
+    
+    for i in range( len(header_list) ):        
+        info[ header_list[i] ] = rcp_list[i]
+        #print(f"{ header_list[i] } = { info[ header_list[i] ] }")
+    
+    return info
+
+
+# each app.route is an endpoint
 @app.route('/helloo')
 def hello_world():
     return 'Hello, World!!!!'
@@ -38,15 +55,23 @@ def recipe():
 
 @app.route('/nutri_lights')
 def nutri_lights():
-    headline = "LOW FAT Crab & Prawn Lunch"
-    recipe_name = ''
-    serving_size
+    info = get_nutridata()
+        
     return render_template("nutrients_traffic_lights.html",
-                           recipe_name=headline,
-                           recipe_2='Gimme beef')
+                            n_EnkJ=str( float( info['n_En'] ) * 4.184 ),
+                            n_Encal=info['n_En'],
+                            n_Fa=info['n_Fa'],
+                            n_Fs=info['n_Fs'],
+                            n_Su=info['n_Su'],
+                            n_Sa=info['n_Sa'],
+                            recipe_name=info['recipe_title'],
+                            serving_size=f"{info['serving_size']}g",
+                            recipe_2='Gimme beef')
 
 
 # this one passes the last part of the URL as an srgument in the variable var_name
+# EG http://127.0.0.1:5000/bloaty/bloaty
+# Screen: Path was: bloaty/bloaty <
 @app.route('/<path:var_name_path>')
 def get_path(var_name_path):
     return f"Path was: {var_name_path} <"

@@ -8,6 +8,28 @@
     <body>
     
         <h1>{{ headline }}</h1>
-    
+
+        <button>        
+            <!-- goes to index -->
+            <a href="##">This page</a>
+        </button>
+        
+        <button>        
+            <!-- goes to the url of route_1 -->
+            <a href="##{{url_for('report_appname')}}">App name?</a>
+            <!-- note the two leading hashtags -->
+        </button>        
+        
+        <button>
+            <a href="{{url_for('report_appname')}}">Actual App name?</a>
+        </button>        
+
+        <button>
+            <a href="{{url_for('recipe')}}">Recipe Roulette</a>
+        </button>
+
+        <button>
+            <a href="{{url_for('nutri_lights')}}">Nutrient Table</a>
+        </button>
     </body>
 </html>
