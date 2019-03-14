@@ -11,7 +11,7 @@
     
     <!-- DON'T put .css file in templates folder! -->
     <!-- Put .css file it in the static folder! WORKS -->
-    <link rel="stylesheet" href="/static/css_breakout.css">
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='css_breakout.css') }}">
 </head>
 
 <body>

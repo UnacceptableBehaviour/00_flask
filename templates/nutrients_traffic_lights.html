@@ -2,49 +2,64 @@
 
 <html>
 <head>
-    <title>nutrient_traffic_light_template</title>
+    <title>nutrient_traffic_light__template</title>
     <!-- Put .css file it in the static folder! WORKS -->
-    <link rel="stylesheet" href="/static/css_breakout.css">
+    <!--<link rel="stylesheet" href="../static/css_breakout.css">-->
+    <link rel="stylesheet" href="{{ url_for( 'static', filname='css_breakout.css') }}">
+    <!--<link rel="stylesheet" href="css_breakout.css">-->
 </head>
 
 <body>
 
 <h3>
-    Html Version Traffic Lights - HTML5 / CSS 
+    Html Version Traffic Lights - HTML5 / CSS - 00_flask
 </h3>
 
 <table>
     <tr>
-        <td colspan="5">{{ recipe_name }} - Nutrition per {{ serving_size }} serving</td>
-        <!-- Thresholds HERE: https://en.wikipedia.org/wiki/Traffic_light_rating_system -->
+        <td colspan="5">{{ info['recipe_title'] }} - Nutrition per {{ info['serving_size'] }}g serving</td>
+        <!-- Thresholds HERE: https://en.wikipedia.org/wiki/t_lgt__rating_system -->
     </tr>
     <tr>
-        <td>Energy</td>
-        <td class="traffic_light" id="traffic_fat">Fat</td>
-        <td class="traffic_light" id="traffic_saturates">Saturates</td>
-        <td class="traffic_light" id="traffic_sugars">Sugars</td>
-        <td class="traffic_light" id="traffic_salt">Salt</td>
+        <td class="t_lgt_en" id="t_energy_ttl">Energy</td>
+        <td class="t_lgt_fa" id="t_fat_ttl">Fat</td>
+        <td class="t_lgt_fs" id="t_saturates_ttl">Saturates</td>
+        <td class="t_lgt_su" id="t_sugars_ttl">Sugars</td>
+        <td class="t_lgt_sa" id="t_salt_ttl">Salt</td>
+    </tr>
+    <!--
+    # scruffy and long winded!
+    # return render_template("nutrients_t_lgt_s.html",
+    #                         n_EnkJ=str( float( info['n_En'] ) * 4.184 ),
+    #                         n_Encal=info['n_En'],
+    #                         n_Fa=info['n_Fa'],
+    #                         n_Fs=info['n_Fs'],
+    #                         n_Su=info['n_Su'],
+    #                         n_Sa=info['n_Sa'],
+    #                         recipe_name=info['recipe_title'],
+    #                         serving_size=f"{info['serving_size']}g",
+    #                         recipe_2='Gimme beef')
+    -->
+    <tr>
+        <td class="t_lgt_en" id="t_enery_qty">{{ info['n_EnkJ'] }}kJ<br>{{ info['n_En'] }}kcal</td>
+        <td class="t_lgt_fa" id="t_fat_qty">{{ info['n_Fa'] }}g</td>
+        <td class="t_lgt_fs" id="t_saturates_qty">{{ info['n_Fs'] }}g</td>
+        <td class="t_lgt_su" id="t_sugars_qty">{{ info['n_Su'] }}g</td>
+        <td class="t_lgt_sa" id="t_salt_qty">{{ info['n_Sa'] }}g</td>
     </tr>
     <tr>
-        <td>{{ n_EnkJ }}kJ<br>{{ n_Encal }}kcal</td>
-        <td class="traffic_light" id="traffic_fat">{{ n_Fa }}</td>
-        <td class="traffic_light" id="traffic_saturates">{{ n_Fs }}</td>
-        <td class="traffic_light" id="traffic_sugars">{{ n_Su }}</td>
-        <td class="traffic_light" id="traffic_salt">{{ n_Sa }}</td>
+        <td class="t_lgt_en" id="t_energy_hml"></td>
+        <td class="t_lgt_fa" id="t_fat_hml">LOW</td>
+        <td class="t_lgt_fs" id="t_saturates_hml">LOW</td>
+        <td class="t_lgt_su" id="t_sugars_hml">HIGH</td>
+        <td class="t_lgt_sa" id="t_salt_hml">MEDIUM</td>
     </tr>
     <tr>
-        <td></td>
-        <td class="traffic_light" id="traffic_fat">LOW</td>
-        <td class="traffic_light" id="traffic_saturates">LOW</td>
-        <td class="traffic_light" id="traffic_sugars">HIGH</td>
-        <td class="traffic_light" id="traffic_salt">MEDIUM</td>
-    </tr>
-    <tr>
-        <td>13%</td>
-        <td class="traffic_light" id="traffic_fat">4%</td>
-        <td class="traffic_light" id="traffic_saturates">7%</td>
-        <td class="traffic_light" id="traffic_sugars">38%</td>
-        <td class="traffic_light" id="traffic_salt">15%</td>
+        <td class="t_lgt_en" id="t_energy">13%</td>
+        <td class="t_lgt_fa" id="t_fat">4%</td>
+        <td class="t_lgt_fs" id="t_saturates">7%</td>
+        <td class="t_lgt_su" id="t_sugars">38%</td>
+        <td class="t_lgt_sa" id="t_salt">15%</td>
     </tr>
 </table>
 

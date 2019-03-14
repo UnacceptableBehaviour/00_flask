@@ -15,7 +15,27 @@ def get_nutridata():
     for i in range( len(header_list) ):        
         info[ header_list[i] ] = rcp_list[i]
         #print(f"{ header_list[i] } = { info[ header_list[i] ] }")
+        
+    info['n_EnkJ'] = str( round( float( info['n_En'] ) * 4.184 ) )
+    info['serving_size'] = str( round( float( info['serving_size'] ) ) )
     
+    return info
+
+
+def get_nutrients_per_serving():
+    info = get_nutridata()
+    
+    nutrient_keys = 'n_En,n_Fa,n_Fs,n_Fm,n_Fp,n_Fo3,n_Ca,n_Su,n_Fb,n_St,n_Pr,n_Sa,n_Al'.split(',')
+    
+    multiplier = float( info['serving_size'] ) / 100.0
+    
+    b4 = 0
+    
+    for key in nutrient_keys:
+        b4 = info[key]
+        info[key] = str( round( ( float( info[key] ) * multiplier ), 1 ) )
+        print(f"key:{key} - b4:{b4} - x:{multiplier} - conv:{info[key]}- conv:{info[key].__class__.__name__}")
+
     return info
 
 
@@ -55,18 +75,22 @@ def recipe():
 
 @app.route('/nutri_lights')
 def nutri_lights():
-    info = get_nutridata()
-        
-    return render_template("nutrients_traffic_lights.html",
-                            n_EnkJ=str( float( info['n_En'] ) * 4.184 ),
-                            n_Encal=info['n_En'],
-                            n_Fa=info['n_Fa'],
-                            n_Fs=info['n_Fs'],
-                            n_Su=info['n_Su'],
-                            n_Sa=info['n_Sa'],
-                            recipe_name=info['recipe_title'],
-                            serving_size=f"{info['serving_size']}g",
-                            recipe_2='Gimme beef')
+    #info = get_nutridata()
+    info = get_nutrients_per_serving()
+    
+    return render_template("nutrients_traffic_lights.html", info=info )
+    
+    # was - scruffy and long winded!    
+    # return render_template("nutrients_traffic_lights.html",
+    #                         n_EnkJ=str( float( info['n_En'] ) * 4.184 ),
+    #                         n_Encal=info['n_En'],
+    #                         n_Fa=info['n_Fa'],
+    #                         n_Fs=info['n_Fs'],
+    #                         n_Su=info['n_Su'],
+    #                         n_Sa=info['n_Sa'],
+    #                         recipe_name=info['recipe_title'],
+    #                         serving_size=f"{info['serving_size']}g",
+    #                         recipe_2='Gimme beef')
 
 
 # this one passes the last part of the URL as an srgument in the variable var_name

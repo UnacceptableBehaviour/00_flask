@@ -51,22 +51,24 @@ th, td {
     padding: 3px
 }
 
-.traffic_energy {
+
+
+.t_lgt_en {
     background-color: #FFFFFF;
 }
 
-.traffic_fat {
+.t_lgt_fa {
     background-color: #3CB938;
 }
 
-.traffic_saturates {
+.t_lgt_fs {
     background-color: #3CB938;
 }
 
-.traffic_sugars {
+.t_lgt_su {
     background-color: #CB2B0B;
 }
 
-.traffic_salt {
+.t_lgt_sa {
     background-color: #FEA150;
 }
