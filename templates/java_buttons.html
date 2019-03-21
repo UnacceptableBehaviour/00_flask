@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>JS intro</title>
+    </head>
+
+    <body>
+    
+        <h1>{{ headline }}</h1>
+
+        
+        <button id='b_grn'>GREEN</button>        
+
+        <button id='b_amb'>AMBER</button>
+
+        <button id='b_red'>RED</button>
+    </body>
+    
+    <script>
+        // DOM loaded event
+        // identify elements, attach callback
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOMContentLoaded');
+            // enter the following in the console to view events LIVE
+            // monitorEvents($('body > h1'))            // header
+
+            document.querySelector('body > h1').onmouseover = function() {
+                console.log('hover over H1');
+            };
+            
+            document.querySelector('body > h1').onclick = function() {
+                console.log('H1 click');
+            };
+            
+            document.querySelector('#b_red').onclick = function() {
+                console.log('RED click');
+                document.querySelector('body > h1').style.color = 'red';
+            };
+
+            
+            document.querySelector('#b_grn').onclick = function() {
+                console.log('GREEN click');
+                document.querySelector('body > h1').style.color = 'green';
+            };            
+            
+            document.querySelector('#b_amb').onclick = function() {
+                console.log('AMBER click');
+                document.querySelector('body > h1').style.color = 'yellow';
+            };            
+            
+        } );
+    </script>    
+</html>

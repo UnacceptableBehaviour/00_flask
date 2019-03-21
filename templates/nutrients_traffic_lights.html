@@ -5,7 +5,7 @@
     <title>nutrient_traffic_light__template</title>
     <!-- Put .css file it in the static folder! WORKS -->
     <!--<link rel="stylesheet" href="../static/css_breakout.css">-->
-    <link rel="stylesheet" href="{{ url_for( 'static', filname='css_breakout.css') }}">
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='css_breakout.css') }}">
     <!--<link rel="stylesheet" href="css_breakout.css">-->
 </head>
 
@@ -62,6 +62,15 @@
         <td class="t_lgt_sa" id="t_salt">15%</td>
     </tr>
 </table>
+<button id='b_red' >RED</button>
+<button id='b_grn'>GRN</button>
+<button id='b_amb'>AMB</button>
+<script>
+    // green: background-color: #3CB938;
+    // red: background-color: #CB2B0B;
+    // amber: background-color: #FEA150;
+    
+</script>
 
 </body>
 </html>

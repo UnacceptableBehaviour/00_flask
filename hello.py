@@ -66,10 +66,18 @@ def index():
     headline_py = "FAT Turkey"
     return render_template("index.html", headline=headline_py)
 
+@app.route('/js')
+def java_script():
+    headline = 'Java buttons init!!?'
+    
+    image_list = ["/static/images/20190128_140750_lemon_grass_chicken_lo_cal.jpg",
+                "/static/images/20190101_171835_venison_wellington_turkey_croquette.jpg"]
+    
+    return render_template("java_buttons.html", headline=headline, image_list=image_list)
 
 @app.route('/recipe')
 def recipe():
-    headline = "LOW FAT Crab & Prawn Lunch"
+    headline = "LOW FAT Crab & Prawn Lunch"    
     return render_template("recipe_template.html", recipe_name=headline, recipe_2='Gimme beef')
 
 
