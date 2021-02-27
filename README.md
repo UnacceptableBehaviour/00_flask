@@ -60,7 +60,8 @@ Trying to serve image from directory
 The empty place holder has the follow link:
 http://127.0.0.1:5000/20190101_171835_venison_wellington_turkey_croquette.jpg
 
-Need to create a folder static which is where it finds these files, and the .css file
+Need to create a folder static which is where it finds these files, and the .css files
+(and .js file which incedentally also get cached)
 
 
 # REFERENCES
